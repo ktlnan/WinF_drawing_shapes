@@ -1,3 +1,5 @@
+using static laba_8.Form1;
+
 namespace laba_8
 {
     public partial class Form1 : Form
@@ -25,6 +27,7 @@ namespace laba_8
             {
                 figureList.Add(figure);
             }
+       
             /*public static figure FindFigure(string name) // находит нужную фигуру из тех, что уже создавала
             {
                 foreach (figure f in figureList) // ищет по списку f-сам объект круг или эллипс
@@ -49,7 +52,68 @@ namespace laba_8
 
         }
         public int x, y, w, h;
+
+        private void button1_Click(object sender, EventArgs e) //кнопка удаления
+        {
+            figure figyra = ShapeContainer.figureList[comboBox1.SelectedIndex];
+            figyra.Clear();
+            comboBox1.Items.RemoveAt(comboBox1.SelectedIndex);
+            ShapeContainer.figureList.Remove(figyra);
+            for (int i = 0; i < ShapeContainer.figureList.Count; i++)
+            {
+                ShapeContainer.figureList[i].Draw();
+            }
+
+        }
+
+        private void button2_Click(object sender, EventArgs e) //кнопка перемещения
+        {
+            figure figyra = ShapeContainer.figureList[comboBox1.SelectedIndex];
+            int x = Convert.ToInt32(textBox5.Text), y = Convert.ToInt32(textBox6.Text);
+            figyra.MoveTo(x, y);
+            for (int i = 0; i < ShapeContainer.figureList.Count; i++) //фигура при прорисовке остается целой
+            {
+                ShapeContainer.figureList[i].Draw();
+            }
+        }
+
         private int repit = 0;
+        private void button3_Click(object sender, EventArgs e) //генерация фигур
+        {
+            if (radioellipse.Checked) // рисует эллипс
+            {
+                x = Convert.ToInt32(textBox1.Text);
+                y = Convert.ToInt32(textBox2.Text);
+                w = Convert.ToInt32(textBox3.Text);
+                h = Convert.ToInt32(textBox4.Text);
+                ellipse ellipse = new ellipse(x, y, w, h);
+                ellipse.Draw();
+                comboBox1.Items.Add("Эллипс " + repit);
+                ShapeContainer.AddFigure(ellipse);
+            }
+            if (radioCircle.Checked) //рисует круг
+            {
+                x = Convert.ToInt32(textBox1.Text);
+                y = Convert.ToInt32(textBox2.Text);
+                w = Convert.ToInt32(textBox3.Text);
+                circle round = new circle(x, y, w);
+                round.Draw();
+                comboBox1.Items.Add("Круг " + repit);
+                ShapeContainer.AddFigure(round);
+            }
+            if (radioRectangle.Checked) // рисует прямоугольник
+            {
+                x = Convert.ToInt32(textBox1.Text);
+                y = Convert.ToInt32(textBox2.Text);
+                w = Convert.ToInt32(textBox3.Text);
+                h = Convert.ToInt32(textBox4.Text);
+                figure rectangle = new rectangle(x, y, w, h);
+                rectangle.Draw();
+                comboBox1.Items.Add("Прямоугольник " + repit);
+                ShapeContainer.AddFigure(rectangle);
+            }
+        }
+
 
         public static class Init
         {

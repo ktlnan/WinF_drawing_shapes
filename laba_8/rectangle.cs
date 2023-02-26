@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static laba_8.Form1;
+using static laba_8.Form1; 
 
 namespace laba_8
 {
