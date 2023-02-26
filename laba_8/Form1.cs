@@ -115,9 +115,9 @@ namespace laba_8
         }
 
 
-        public static class Init
+        public static class Init //Инициализация инструментов рисования
         {
-            public static Bitmap bitmap;
+            public static Bitmap bitmap; //инстр рисования
             public static PictureBox pictureBox;
             public static Pen pen;
         }
