@@ -37,25 +37,29 @@ namespace laba_8
                 return null;
             }*/
         }
+        abstract public class figure
+        {
+            public int x;
+            public int y;
+            public int w;
+            public int h;
+            abstract public void Draw();
+            abstract public void Clear();
+            abstract public void MoveTo(int x, int y);
+
+        }
         public int x, y, w, h;
         private int repit = 0;
-    }
 
-    abstract public class figure
-    {
-        public int x;
-        public int y;
-        public int w;
-        public int h;
-        abstract public void Draw();
-        abstract public void Clear();
-        abstract public void MoveTo(int x, int y);
+        public static class Init
+        {
+            public static Bitmap bitmap;
+            public static PictureBox pictureBox;
+            public static Pen pen;
+        }
+        
 
     }
-    public static class Init
-    {
-        public static Bitmap bitmap;
-        public static PictureBox pictureBox;
-        public static Pen pen;
-    }
+
+
 }
