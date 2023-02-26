@@ -1,5 +1,3 @@
-using static laba_8.Form1;
-
 namespace laba_8
 {
     public partial class Form1 : Form
@@ -27,7 +25,7 @@ namespace laba_8
             {
                 figureList.Add(figure);
             }
-       
+
             /*public static figure FindFigure(string name) // находит нужную фигуру из тех, что уже создавала
             {
                 foreach (figure f in figureList) // ищет по списку f-сам объект круг или эллипс
@@ -77,6 +75,14 @@ namespace laba_8
             }
         }
 
+        private void radioPoligon_CheckedChanged(object sender, EventArgs e) // создали вторую форму с параметрами для многоугольника
+        {
+            Form2 newForm = new Form2();
+            newForm.Show();
+            Form2 NewForm2 = new Form2();
+            NewForm2.Owner = this;
+        }
+
         private int repit = 0;
         private void button3_Click(object sender, EventArgs e) //генерация фигур
         {
@@ -112,7 +118,9 @@ namespace laba_8
                 comboBox1.Items.Add("Прямоугольник " + repit);
                 ShapeContainer.AddFigure(rectangle);
             }
+          
         }
+    }
 
 
         public static class Init //Инициализация инструментов рисования
@@ -121,9 +129,6 @@ namespace laba_8
             public static PictureBox pictureBox;
             public static Pen pen;
         }
-        
+
 
     }
-
-
-}

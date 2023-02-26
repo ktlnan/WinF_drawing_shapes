@@ -217,6 +217,7 @@
             this.radioPoligon.TabStop = true;
             this.radioPoligon.Text = "Многоугольник";
             this.radioPoligon.UseVisualStyleBackColor = true;
+            this.radioPoligon.CheckedChanged += new System.EventHandler(this.radioPoligon_CheckedChanged);
             // 
             // radioRectangle
             // 
