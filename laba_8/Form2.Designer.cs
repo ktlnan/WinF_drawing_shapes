@@ -31,6 +31,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -60,6 +62,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.textBox3);
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.textBox1);
@@ -74,6 +78,24 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Многоугольник";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(246, 126);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(212, 20);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Введите координаты 1 точки:";
+            this.label5.Click += new System.EventHandler(this.buttonCreatePoint_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(36, 101);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(0, 20);
+            this.label4.TabIndex = 9;
             // 
             // textBox3
             // 
@@ -113,6 +135,7 @@
             this.button2.TabIndex = 3;
             this.button2.Text = "Нарисовать";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // buttonCreatePoint
             // 
@@ -120,7 +143,7 @@
             this.buttonCreatePoint.Name = "buttonCreatePoint";
             this.buttonCreatePoint.Size = new System.Drawing.Size(278, 40);
             this.buttonCreatePoint.TabIndex = 2;
-            this.buttonCreatePoint.Text = "Добавить фигуру";
+            this.buttonCreatePoint.Text = "Добавить точку";
             this.buttonCreatePoint.UseVisualStyleBackColor = true;
             this.buttonCreatePoint.Click += new System.EventHandler(this.buttonCreatePoint_Click);
             // 
@@ -149,5 +172,7 @@
         private Label label3;
         private Button button2;
         private Button buttonCreatePoint;
+        private Label label4;
+        private Label label5;
     }
 }

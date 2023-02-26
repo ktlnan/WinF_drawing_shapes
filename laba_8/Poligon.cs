@@ -18,7 +18,7 @@ namespace laba_8
         }
 
         public override void Draw() //переопределенный метод рисования
-        {
+        { 
             Graphics g = Graphics.FromImage(Init.bitmap);
             g.DrawPolygon(Init.pen, points);
             Init.pictureBox.Image = Init.bitmap;

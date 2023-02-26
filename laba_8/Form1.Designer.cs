@@ -308,7 +308,7 @@
 
         #endregion
 
-        private ComboBox comboBox1;
+        public ComboBox comboBox1;
         private Button button1;
         private Button button2;
         private PictureBox pictureBox1;
