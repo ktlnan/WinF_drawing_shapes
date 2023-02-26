@@ -24,19 +24,19 @@ namespace laba_8
             this.w = 0;
             this.h = 0;
         }
-        public override void Draw()
+        public override void Draw() //переопределенный метод рисования
         {
             Graphics g = Graphics.FromImage(Init.bitmap);
             g.DrawEllipse(Init.pen, this.x, this.y, this.w, this.h);
             Init.pictureBox.Image = Init.bitmap;
         }
-        public override void Clear()
+        public override void Clear() 
         {
             Graphics g = Graphics.FromImage(Init.bitmap);
             g.DrawEllipse(new Pen(Color.White, 5), this.x, this.y, this.w, this.h);
             Init.pictureBox.Image = Init.bitmap;
         }
-        public override void MoveTo(int x, int y)
+        public override void MoveTo(int x, int y) //переопределенный метод передвижения
         {
             this.Clear();
             this.x += x;
