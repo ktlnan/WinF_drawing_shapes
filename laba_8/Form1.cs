@@ -40,6 +40,7 @@ namespace laba_8
         public int x, y, w, h;
         private int repit = 0;
     }
+
     abstract public class figure
     {
         public int x;
