@@ -13,16 +13,27 @@ namespace laba_8
 {
     public partial class Form2 : Form
     {
-
+        public bool flag;
         public object polig;
         public PointF[] points;
         public int p=0;
         public int num;
         
-        public Form2(ref PointF[] points)
+        
+        public Form2(ref PointF[] points, bool flag=false)
         {
             InitializeComponent();
             this.points = points;
+            this.flag = flag;
+            if(flag)
+            {
+                points = new PointF[3];
+                textBox1.Hide();
+                num = 3;
+                button1.Hide();
+                
+                
+            }
         
         }
 
@@ -65,6 +76,7 @@ namespace laba_8
             } else
             {
                 MessageBox.Show($"Массив полон");
+                
             }
 
 
@@ -89,19 +101,6 @@ namespace laba_8
             num = Convert.ToInt32(textBox1.Text);
             points= new PointF[num];
         }
-        private void button3_Click(object sender, EventArgs e) //треугольник
-        {
-            PointF[] tes = new PointF[3];
-            tes[0].X = 100;
-            tes[0].Y = 100;
-
-            tes[1].X = 100;
-            tes[1].Y = 200;
-
-            tes[2].X = 200;
-            tes[2].Y = 150;
-            Poligon pol = new Poligon(tes);
-            pol.Draw();
-        }
+       
     }
 }

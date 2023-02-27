@@ -206,6 +206,7 @@
             this.radioTriabgle.TabStop = true;
             this.radioTriabgle.Text = "Треугольник";
             this.radioTriabgle.UseVisualStyleBackColor = true;
+            this.radioTriabgle.Click += new System.EventHandler(this.radioTriabgle_CheckedChanged);
             // 
             // radioPoligon
             // 
@@ -217,7 +218,7 @@
             this.radioPoligon.TabStop = true;
             this.radioPoligon.Text = "Многоугольник";
             this.radioPoligon.UseVisualStyleBackColor = true;
-            this.radioPoligon.CheckedChanged += new System.EventHandler(this.radioPoligon_CheckedChanged);
+            this.radioPoligon.Click += new System.EventHandler(this.radioPoligon_CheckedChanged);
             // 
             // radioRectangle
             // 

@@ -31,8 +31,11 @@ namespace laba_8
         public override void MoveTo(int x, int y) //переопределенный метод передвижения
         {
             this.Clear();
-            this.x += x;
-            this.y += y;
+            for (int i=0; i < points.Length; i++)
+            {
+                points[i].X += x;
+                points[i].Y += y;
+            }
             this.Draw();
         }
 

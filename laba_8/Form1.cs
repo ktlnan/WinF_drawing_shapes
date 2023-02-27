@@ -80,6 +80,19 @@ namespace laba_8
             }
         }
 
+        private void radioTriabgle_CheckedChanged(object sender, EventArgs e)
+        {
+            points = new PointF[3];
+            Form2 newForm = new Form2(ref points, true);
+            this.Hide();
+            newForm.ShowDialog();
+            Poligon poligon = (Poligon)newForm.polig;
+            this.Show();
+
+
+            comboBox1.Items.Add(poligon);
+        }
+
         private void radioPoligon_CheckedChanged(object sender, EventArgs e) // создали вторую форму с параметрами для многоугольника
         {
             points = new PointF[3];
