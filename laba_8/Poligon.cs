@@ -9,12 +9,11 @@ namespace laba_8
 {
     internal class Poligon : figure
     {
-        public int i;
-        public Point[] points ;
-        public Poligon(Point[] p, int i)
+
+        public PointF[] points ;
+        public Poligon(PointF[] p)
         {
             points = p;
-            this.i = i;
         }
 
         public override void Draw() //переопределенный метод рисования

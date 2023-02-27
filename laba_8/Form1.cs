@@ -1,7 +1,11 @@
+using System.Windows.Forms;
+
 namespace laba_8
 {
     public partial class Form1 : Form
     {
+        PointF[] points;
+        
         public Form1()
         {
             InitializeComponent();
@@ -11,6 +15,7 @@ namespace laba_8
             Init.bitmap = bitmap;
             Init.pictureBox = pictureBox1;
             Init.pen = pen;
+            
 
             ShapeContainer shape = new ShapeContainer();
         }
@@ -77,10 +82,17 @@ namespace laba_8
 
         private void radioPoligon_CheckedChanged(object sender, EventArgs e) // создали вторую форму с параметрами дл€ многоугольника
         {
-            Form2 newForm = new Form2();
-            newForm.Show();
-            Form2 NewForm2 = new Form2();
-            NewForm2.Owner = this;
+            points = new PointF[3];
+            Form2 newForm = new Form2(ref points);
+            this.Hide();
+            newForm.ShowDialog();
+            Poligon poligon = (Poligon)newForm.polig;
+            this.Show();
+
+
+            comboBox1.Items.Add(poligon);
+
+
         }
 
         private int repit = 0;
@@ -96,6 +108,7 @@ namespace laba_8
                 ellipse.Draw();
                 comboBox1.Items.Add("Ёллипс " + repit);
                 ShapeContainer.AddFigure(ellipse);
+                repit++;
             }
             if (radioCircle.Checked) //рисует круг
             {
