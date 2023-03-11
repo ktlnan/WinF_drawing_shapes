@@ -91,8 +91,6 @@ namespace laba_8
             Poligon poligon = new Poligon(points);
             poligon.Draw();
             polig = poligon;
-
-           //comboBox1.Items.Add("Многоугольник");
             ShapeContainer.AddFigure(poligon); 
         }
 
@@ -102,5 +100,18 @@ namespace laba_8
             points= new PointF[num];
         }
        
-    }
+            //PointF[] tes = new PointF[3];
+            //tes[0].X = 100;
+            //tes[0].Y = 100;
+
+            //tes[1].X = 100;
+            //tes[1].Y = 200;
+
+            //tes[2].X = 200;
+            //tes[2].Y = 150;
+            //Poligon pol = new Poligon(tes);
+            //pol.Draw();
+           
+        }
+
 }

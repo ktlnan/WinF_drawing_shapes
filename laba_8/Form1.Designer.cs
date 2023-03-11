@@ -236,10 +236,10 @@
             this.radioShip.AutoSize = true;
             this.radioShip.Location = new System.Drawing.Point(868, 249);
             this.radioShip.Name = "radioShip";
-            this.radioShip.Size = new System.Drawing.Size(90, 24);
+            this.radioShip.Size = new System.Drawing.Size(80, 24);
             this.radioShip.TabIndex = 10;
             this.radioShip.TabStop = true;
-            this.radioShip.Text = "Корабль";
+            this.radioShip.Text = "Фигура";
             this.radioShip.UseVisualStyleBackColor = true;
             // 
             // groupBox2

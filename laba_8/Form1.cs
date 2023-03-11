@@ -31,17 +31,6 @@ namespace laba_8
                 figureList.Add(figure);
             }
 
-            /*public static figure FindFigure(string name) // находит нужную фигуру из тех, что уже создавала
-            {
-                foreach (figure f in figureList) // ищет по списку f-сам объект круг или эллипс
-                {
-                    if (f.name == name) // если имя соот заданному то он его возвр 
-                    {
-                        return f;
-                    }
-                }
-                return null;
-            }*/
         }
         abstract public class figure
         {
@@ -111,7 +100,19 @@ namespace laba_8
         private int repit = 0;
         private void button3_Click(object sender, EventArgs e) //генерация фигур
         {
-            if (radioellipse.Checked) // рисует эллипс
+            if (radioShip.Checked) // рисует эллипс
+            {
+                x = Convert.ToInt32(textBox1.Text);
+                y = Convert.ToInt32(textBox2.Text);
+                w = Convert.ToInt32(textBox3.Text);
+                h = Convert.ToInt32(textBox4.Text);
+               Myfigure  cake = new(x, y, w, h);
+                cake.Draw();
+                comboBox1.Items.Add("что то " + repit);
+                ShapeContainer.AddFigure(cake);
+                repit++;
+            }
+            if (radioellipse.Checked) // рисует 
             {
                 x = Convert.ToInt32(textBox1.Text);
                 y = Convert.ToInt32(textBox2.Text);
